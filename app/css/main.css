@@ -12,34 +12,76 @@ Variables
 /*********************
 Main
 **********************/
-.todo {
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5; }
+
+li {
+  list-style: none; }
+
+main {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   margin-top: 150px; }
-  .todo::after {
+  main::after {
     clear: both;
     content: "";
     display: table; }
-  .todo input {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
-    margin-left: 8.5298%;
-    height: 80px;
-    font-size: 28px; }
-    .todo input:last-child {
-      margin-right: 0; }
 
-.listContainer {
+.todo {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 82.94039%;
-  margin-left: 8.5298%; }
-  .listContainer:last-child {
+  margin-left: 8.5298%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1); }
+  .todo:last-child {
     margin-right: 0; }
+
+#todoInput {
+  width: 80%;
+  margin-right: 0;
+  padding-left: 20px;
+  height: 80px;
+  font-size: 28px;
+  border: 1px solid #E6E6E6;
+  box-shadow: inset 0px -2px 0px #f7f7f7; }
+  #todoInput::-webkit-input-placeholder {
+    /* WebKit browsers */
+    font-weight: 100;
+    font-style: italic; }
+  #todoInput:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-weight: 100;
+    font-style: italic; }
+  #todoInput::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-weight: 100;
+    font-style: italic; }
+  #todoInput:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    font-weight: 100;
+    font-style: italic; }
+  #todoInput:focus {
+    outline: none; }
+
+#addBtn {
+  width: 20%;
+  height: 80px;
+  margin-left: -4px;
+  font-size: 28px;
+  bordee: 1px solid #E6E6E6; }
+
+#list {
+  padding-left: 0;
+  margin: 0; }
+
+.listItem {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #E6E6E6; }
 
 /*********************
 

@@ -37,6 +37,8 @@
 
     taskToEdit.status = 'Closed';
 
+    console.log(storage);
+
   });
 
 }());
