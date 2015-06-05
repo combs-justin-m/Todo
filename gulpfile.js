@@ -82,7 +82,7 @@ gulp.task('handlebars', function(){
     .pipe(wrap('Handlebars.template(<%= contents %>)'))
     .pipe(declare({namespace: 'template'}))
     .pipe(concat('templates.js'))
-    .pipe(gulp.dest('./js/'));
+    .pipe(gulp.dest('./app/js/'));
 });
 
 // -- SASS STYLESHEETS -- //

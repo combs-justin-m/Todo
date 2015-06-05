@@ -1,0 +1,36 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+/*********************
+Variables
+**********************/
+
+
+/*********************
+Main
+**********************/
+
+.todo {
+  @include outer-container;
+  margin-top: 150px;
+
+  input {
+    @include span-columns(10);
+      @include shift(1);
+    height: 80px;
+    font-size: 28px;
+  }
+}
+
+.listContainer {
+  @include span-columns(10);
+      @include shift(1);
+}
+
+/*********************
+
+**********************/
+
+.complete {
+  text-decoration: line-through;
+}

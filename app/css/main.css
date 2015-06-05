@@ -1,0 +1,48 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+/*********************
+Variables
+**********************/
+/*********************
+Main
+**********************/
+.todo {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px; }
+  .todo::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .todo input {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%;
+    margin-left: 8.5298%;
+    height: 80px;
+    font-size: 28px; }
+    .todo input:last-child {
+      margin-right: 0; }
+
+.listContainer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 82.94039%;
+  margin-left: 8.5298%; }
+  .listContainer:last-child {
+    margin-right: 0; }
+
+/*********************
+
+**********************/
+.complete {
+  text-decoration: line-through; }
