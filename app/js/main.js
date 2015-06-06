@@ -41,8 +41,28 @@
     taskToEdit.active = !taskToEdit.active;
 
     render();
+  });
 
-    console.log(storage);
+  $list.on('click', '.deletebox', function(){
+
+    var currentTask = $(this).siblings('.listItem');
+    var taskText = currentTask.data('id');
+    var taskToEdit = _.find(storage, {id: taskText});
+
+    var i = storage.indexOf(taskToEdit);
+      if (i > -1) {
+        storage.splice(i, 1);
+      }
+
+    render();
+  });
+
+  $('.deletebox').mouseover(function(){
+
+    console.log('entered');
+
+    $('.deletebox').removeClass('fa-minus-square-o');
+    $('.deletebox').addClass('fa-minus-square');
   });
 
 }());
