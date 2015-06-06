@@ -16,6 +16,8 @@ Main
 
 body {
   font-family: 'Roboto', sans-serif;
+  color: $black;
+  font-weight: 300;
   background-color: $tan;
 }
 
@@ -31,31 +33,48 @@ main {
 .todo {
   @include span-columns(10);
   @include shift(1);
+  position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px;
+}
+
+#todoForm {
+  position: relative;
+}
+
+.rightArrow {
+  position: absolute;
+  font-size: 30px;
+  top: 22px;
+  left: 20px;
 }
 
 #todoInput {
   width: 80%;
   margin-right: 0;
-  padding-left: 20px;
+  padding-left: 60px;
   height: 80px;
   font-size: 28px;
   border: 1px solid $lightgray;
   box-shadow: inset 0px -2px 0px #f7f7f7;
 
   &::-webkit-input-placeholder { /* WebKit browsers */
+    color: $lightgray;
     font-weight: 100;
     font-style: italic;
   }
   &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $lightgray;
     font-weight: 100;
     font-style: italic;
   }
   &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $lightgray;
     font-weight: 100;
     font-style: italic;
   }
   &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $lightgray;
     font-weight: 100;
     font-style: italic;
   }
@@ -69,12 +88,14 @@ main {
   height: 80px;
   margin-left: -4px;
   font-size: 28px;
-  bordee: 1px solid $lightgray;
-}
+  color: $black;
+  outline: none;
+  background: transparent;
+  border: 1px solid $lightgray;
 
-
-.listContainer {
-
+  &:focus {
+    outline: 1px solid $gray;
+  }
 }
 
 #list {
@@ -83,16 +104,38 @@ main {
 }
 
 .listItem {
+  position: relative;
   background-color: $white;
   width: 100%;
   height: 80px;
   border-bottom: 1px solid $lightgray;
+  font-size: 26px;
+  font-weight: 300;
+  padding: 25px 60px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.listWrapper:hover .checkbox {
+  color: springgreen;
 }
 
 /*********************
 
 **********************/
 
+.checkbox{
+
+  position: absolute;
+  z-index: 10;
+  font-size: 30px;
+  margin-top: 25px;
+  left: 20px
+}
+
 .complete {
+  color: $lightgray;
   text-decoration: line-through;
 }

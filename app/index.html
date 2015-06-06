@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic,400" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/vendor/normalize.css">
+  <link rel="stylesheet" href="css/vendor/font-awesome.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -12,10 +13,11 @@
   <main>
     <section class="todo">
     <form id="todoForm">
-        <input type="text" placeholder="What needs to be done?" id="todoInput">
+        <div class="rightArrow"><i class="fa fa-sign-in"></i></div>
+        <input type="text" placeholder="What needs to be done?" id="todoInput" required>
         <input type="submit" value="Add" id="addBtn">
     </form>
-      <article class="listContainer">
+      <article>
         <ul id="list">
 
         </ul>

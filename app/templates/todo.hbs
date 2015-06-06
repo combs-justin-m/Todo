@@ -1,4 +1,16 @@
 
-  {{#each data}}
-    <li class="listItem">{{task}}</li>
-  {{/each}}
+{{#each data}}
+
+  {{#if active}}
+    <div class="listWrapper">
+      <i class="fa fa-circle-thin checkbox"></i>
+      <li class="listItem" data-id="{{id}}">{{task}}</li>
+    </div>
+  {{else}}
+    <div class="listWrapper">
+      <i class="fa fa-check-circle checkbox"></i>
+      <li class="listItem complete" data-id="{{id}}">{{task}}</li>
+    </div>
+  {{/if}}
+
+{{/each}}

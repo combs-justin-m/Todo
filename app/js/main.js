@@ -4,41 +4,45 @@
 
   var Todo = function(options){
     var args = options || {};
-
+    this.id = args.id;
     this.task = args.task;
-    this.status = 'Active';
+    this.active = true;
   };
 
   var storage = [];
+  var count = 0;
   var $todoForm = $('#todoForm');
   var $todoInput = $('todoInput');
   var $list = $('#list');
 
+  function render() {
+    $list.html(template.todo({data:storage}));
+  }
+
   $todoForm.on('submit', function(e){
     e.preventDefault();
     var taskText = $('#todoInput').val();
-    var taskInstance = new Todo({task:taskText});
+    var taskInstance = new Todo({id:count, task:taskText});
+    count++;
 
     storage.push(taskInstance);
 
     this.reset();
 
-    $list.html(template.todo({data:storage}));
-
+    render();
   });
 
   $list.on('click', 'li', function (e){
     e.preventDefault();
 
-    $(this).addClass('complete');
+    var currentTask = $(this).data('id');
+    var taskToEdit = _.find(storage, {id: currentTask});
 
-    var currentTask = $(this).text();
-    var taskToEdit = _.find(storage, {task: currentTask});
+    taskToEdit.active = !taskToEdit.active;
 
-    taskToEdit.status = 'Closed';
+    render();
 
     console.log(storage);
-
   });
 
 }());

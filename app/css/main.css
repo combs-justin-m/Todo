@@ -14,6 +14,8 @@ Main
 **********************/
 body {
   font-family: 'Roboto', sans-serif;
+  color: #4D4D4D;
+  font-weight: 300;
   background-color: #F5F5F5; }
 
 li {
@@ -35,32 +37,47 @@ main {
   margin-right: 2.35765%;
   width: 82.94039%;
   margin-left: 8.5298%;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1); }
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 60px; }
   .todo:last-child {
     margin-right: 0; }
+
+#todoForm {
+  position: relative; }
+
+.rightArrow {
+  position: absolute;
+  font-size: 30px;
+  top: 22px;
+  left: 20px; }
 
 #todoInput {
   width: 80%;
   margin-right: 0;
-  padding-left: 20px;
+  padding-left: 60px;
   height: 80px;
   font-size: 28px;
   border: 1px solid #E6E6E6;
   box-shadow: inset 0px -2px 0px #f7f7f7; }
   #todoInput::-webkit-input-placeholder {
     /* WebKit browsers */
+    color: #E6E6E6;
     font-weight: 100;
     font-style: italic; }
   #todoInput:-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
+    color: #E6E6E6;
     font-weight: 100;
     font-style: italic; }
   #todoInput::-moz-placeholder {
     /* Mozilla Firefox 19+ */
+    color: #E6E6E6;
     font-weight: 100;
     font-style: italic; }
   #todoInput:-ms-input-placeholder {
     /* Internet Explorer 10+ */
+    color: #E6E6E6;
     font-weight: 100;
     font-style: italic; }
   #todoInput:focus {
@@ -71,20 +88,42 @@ main {
   height: 80px;
   margin-left: -4px;
   font-size: 28px;
-  bordee: 1px solid #E6E6E6; }
+  color: #4D4D4D;
+  outline: none;
+  background: transparent;
+  border: 1px solid #E6E6E6; }
+  #addBtn:focus {
+    outline: 1px solid #777777; }
 
 #list {
   padding-left: 0;
   margin: 0; }
 
 .listItem {
+  position: relative;
   background-color: #FFFFFF;
   width: 100%;
   height: 80px;
-  border-bottom: 1px solid #E6E6E6; }
+  border-bottom: 1px solid #E6E6E6;
+  font-size: 26px;
+  font-weight: 300;
+  padding: 25px 60px 0; }
+  .listItem:hover {
+    cursor: pointer; }
+
+.listWrapper:hover .checkbox {
+  color: springgreen; }
 
 /*********************
 
 **********************/
+.checkbox {
+  position: absolute;
+  z-index: 10;
+  font-size: 30px;
+  margin-top: 25px;
+  left: 20px; }
+
 .complete {
+  color: #E6E6E6;
   text-decoration: line-through; }
