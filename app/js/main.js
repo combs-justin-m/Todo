@@ -42,6 +42,11 @@
     $list.html(template.todo({data:filteredStorage}));
   }
 
+  function sortClass(item) {
+    $(item).siblings().removeClass('activeSort');
+    $(item).addClass('activeSort');
+  }
+
   $todoForm.on('submit', function(e){
     e.preventDefault();
     var taskText = $('#todoInput').val();
@@ -84,17 +89,28 @@
     filter.active = true;
     filter.complete = false;
     render();
+
+    sortClass(this);
   });
 
   $('#sortComplete').on('click', function(){
     filter.active = false;
     filter.complete = true;
     render();
+
+    sortClass(this);
   });
 
   $('#sortAll').on('click', function(){
     filter.active = true;
     filter.complete = true;
+    render();
+
+    sortClass(this);
+  });
+
+  $('.clearWrapper').on('click', function(){
+    storage = [];
     render();
   });
 

@@ -143,19 +143,63 @@ Status
 
 .complete {
   color: #CFCFCF;
-  text-decoration: line-through; }
+  text-decoration: line-through;
+  font-style: italic; }
 
 /*********************
 Sort
 **********************/
 .sortRow {
-  background-color: #FFFFFF; }
+  position: relative;
+  background-color: #FFFFFF;
+  padding-left: 20px;
+  font-weight: 100; }
 
 .sortItem {
-  display: inline-block; }
+  display: inline-block;
+  padding: 0 5px; }
   .sortItem:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    text-decoration: underline; }
+
+#clearList {
+  position: absolute;
+  right: 0;
+  margin-right: 55px;
+  margin-top: 0;
+  top: 15px; }
+
+.clearWrapper:hover {
+  cursor: pointer; }
+
+.clearWrapper:hover .trash {
+  color: tomato; }
+
+.clearWrapper:hover #clearList {
+  text-decoration: underline; }
+
+.trash {
+  position: absolute;
+  font-size: 35px;
+  right: 20px;
+  top: 6px; }
 
 .hide {
   visibility: hidden;
   height: 0; }
+
+.activeSort {
+  font-weight: 400;
+  font-style: italic;
+  text-decoration: underline; }
+
+/*********************
+Media
+**********************/
+@media (max-width: 550px) {
+  #todoInput {
+    font-size: 18px; }
+  #addBtn {
+    font-size: 18px; }
+  .listItem {
+    font-size: 18px; } }
