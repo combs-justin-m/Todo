@@ -1,6 +1,6 @@
 ## Welcome to My Repo
 
-> I am your Readme.md file, you should probably update me.
+> Built using {{handlebars}} to display information based what is stored in a database.
 
 
 ## Usage
