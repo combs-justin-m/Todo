@@ -12,6 +12,9 @@ Variables
 /*********************
 Main
 **********************/
+* {
+  transition: all 0.2s ease; }
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #4D4D4D;
@@ -132,9 +135,9 @@ main {
 
 .deletebox {
   position: absolute;
-  z-index: 10;
+  z-index: 15;
   font-size: 35px;
-  margin-top: -55px;
+  margin-top: -57px;
   right: 20px;
   opacity: 0; }
   .deletebox:hover {

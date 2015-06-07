@@ -56,13 +56,4 @@
 
     render();
   });
-
-  $('.deletebox').mouseover(function(){
-
-    console.log('entered');
-
-    $('.deletebox').removeClass('fa-minus-square-o');
-    $('.deletebox').addClass('fa-minus-square');
-  });
-
 }());
