@@ -12,9 +12,6 @@ Variables
 /*********************
 Main
 **********************/
-* {
-  transition: all 0.2s ease; }
-
 body {
   font-family: 'Roboto', sans-serif;
   color: #4D4D4D;
@@ -124,7 +121,7 @@ main {
   opacity: 1; }
 
 /*********************
-
+Status
 **********************/
 .checkbox {
   position: absolute;
@@ -147,3 +144,18 @@ main {
 .complete {
   color: #CFCFCF;
   text-decoration: line-through; }
+
+/*********************
+Sort
+**********************/
+.sortRow {
+  background-color: #FFFFFF; }
+
+.sortItem {
+  display: inline-block; }
+  .sortItem:hover {
+    cursor: pointer; }
+
+.hide {
+  visibility: hidden;
+  height: 0; }

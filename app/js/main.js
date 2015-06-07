@@ -14,9 +14,32 @@
   var $todoForm = $('#todoForm');
   var $todoInput = $('todoInput');
   var $list = $('#list');
+  var filter = {
+    active: true,
+    complete: true
+  };
 
   function render() {
-    $list.html(template.todo({data:storage}));
+
+    if (storage.length > 0) {
+      $('.sortRow').removeClass('hide');
+    } else if (storage.length === 0) {
+      $('.sortRow').addClass('hide');
+    }
+
+    var filteredStorage = _.filter(storage, function (item) {
+      if (filter.active && filter.complete) {
+        return true;
+      } else if (filter.active) {
+        return item.active;
+      } else if (filter.complete) {
+        return !item.active;
+      } else {
+        return false;
+      }
+    });
+
+    $list.html(template.todo({data:filteredStorage}));
   }
 
   $todoForm.on('submit', function(e){
@@ -29,7 +52,7 @@
 
     this.reset();
 
-    render();
+    render(storage);
   });
 
   $list.on('click', 'li', function (e){
@@ -40,7 +63,7 @@
 
     taskToEdit.active = !taskToEdit.active;
 
-    render();
+    render(storage);
   });
 
   $list.on('click', '.deletebox', function(){
@@ -54,6 +77,25 @@
         storage.splice(i, 1);
       }
 
+    render(storage);
+  });
+
+  $('#sortActive').on('click', function(){
+    filter.active = true;
+    filter.complete = false;
     render();
   });
+
+  $('#sortComplete').on('click', function(){
+    filter.active = false;
+    filter.complete = true;
+    render();
+  });
+
+  $('#sortAll').on('click', function(){
+    filter.active = true;
+    filter.complete = true;
+    render();
+  });
+
 }());

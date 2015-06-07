@@ -15,7 +15,7 @@ Main
 **********************/
 
 * {
-  transition: all 0.2s ease;
+  // transition: all 0.2s ease;
 }
 
 body {
@@ -135,7 +135,7 @@ main {
 }
 
 /*********************
-
+Status
 **********************/
 
 .checkbox{
@@ -164,3 +164,25 @@ main {
   color: $lightgray;
   text-decoration: line-through;
 }
+
+/*********************
+Sort
+**********************/
+
+.sortRow {
+  background-color: $white;
+}
+
+.sortItem {
+  display: inline-block;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hide {
+  visibility: hidden;
+  height: 0;
+}
+
