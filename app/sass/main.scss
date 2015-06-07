@@ -116,10 +116,10 @@ main {
   font-size: 26px;
   font-weight: 300;
   padding: 25px 60px 0;
+}
 
-  &:hover {
-    cursor: pointer;
-  }
+.listWrapper:hover {
+  cursor: pointer;
 }
 
 .listWrapper:hover .checkbox {

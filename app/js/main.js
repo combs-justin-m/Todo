@@ -60,10 +60,10 @@
     render(storage);
   });
 
-  $list.on('click', 'li', function (e){
+  $list.on('click', '.listWrapper', function (e){
     e.preventDefault();
 
-    var currentTask = $(this).data('id');
+    var currentTask = $(this).find('.listItem').data('id');
     var taskToEdit = _.find(storage, {id: currentTask});
 
     taskToEdit.active = !taskToEdit.active;
