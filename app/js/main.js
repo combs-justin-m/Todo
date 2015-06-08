@@ -6,8 +6,9 @@
     var args = options || {};
     this.id = args.id;
     this.task = args.task;
-    this.active = true;
   };
+
+  Todo.prototype.active = true;
 
   var storage = [];
   var count = 0;
@@ -40,6 +41,7 @@
     });
 
     $list.html(template.todo({data:filteredStorage}));
+    console.log(storage);
   }
 
   function sortClass(item) {
